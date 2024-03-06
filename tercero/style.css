@@ -23,14 +23,8 @@ nav {
     display: flex;
     flex-direction: row;
     background-color: #333;
-
-    /* opciones varias */
-    /* start | end | center | space-between | space-around | space-evenly */
-    justify-content: space-around;
-    
-    /* No hace nada */
-    /* align-items: start; */
-
+    /* Centra los elementos del menú de navegación en pantallas grandes */
+    justify-content: center;
 }
 
 /* Enlaces de navegación */
@@ -38,7 +32,6 @@ nav a {
     color: white;
     padding: 14px 20px;
     text-decoration: none;
-    
 }
 
 /* Contenedor principal */
@@ -78,7 +71,14 @@ footer {
     nav,
     .row {
         flex-direction: column;
-        align-items:center
-        
+    }
+}
+
+/* Media query para pantallas grandes */
+@media screen and (min-width: 800px) {
+
+    /* Agrega espacio entre los enlaces de navegación */
+    nav a {
+        margin-right: 20px;
     }
 }
