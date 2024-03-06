@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>¡Bienvenido a la Cervecería!</h1>
+        <div class="content">
+            <!-- Agregar la imagen con un ID para poder acceder a ella en JavaScript -->
+            <img src="rey_atanagildo.png" alt="Cerveza" class="beer-image" id="beerImage">
+            <!-- Mostrar el nombre de la cerveza -->
+            <p class="beer-name" id="beerName">Rey Atanagildo</p>
+            <!-- Aquí está el script JavaScript original -->
+            <script>
+                // Definición de la clase Beer
+                class Beer {
+                    // Constructor de la clase Beer
+                    constructor(name, brand, imageUrl) {
+                        this.name = name;
+                        this.brand = brand;
+                        this.imageUrl = imageUrl;
+                    }
+
+                    // Método show para mostrar información de la cerveza
+                    show(){
+                        return this.name + " - " + this.brand;
+                    }
+                }
+
+                // Lista de imágenes de cerveza (rutas relativas)
+                let beerData = [
+                    { name: "Rey Atanagildo", brand: "Marca 1", imageUrl: "rey_atanagildo.png" },
+                    { name: "Rey Ataulfo", brand: "Marca 2", imageUrl: "rey_ataulfo.png" },
+                    { name: "Rey Ervigio", brand: "Marca 3", imageUrl: "rey_ervigio.png" },
+                    { name: "Rey Recesvinto", brand: "Marca 4", imageUrl: "rey_recesvinto.png" },
+                    { name: "Rey Leovigildo", brand: "Marca 5", imageUrl: "rey_leogivildo.png" },
+                    { name: "Rey Teodorico", brand: "Marca 6", imageUrl: "rey_teodorico.png" },
+                    { name: "Rey Incógnito", brand: "Marca 7", imageUrl: "rey_incognito.png" },
+                    { name: "Rey Sisebuto", brand: "Marca 8", imageUrl: "rey_sisebuto.png" }
+                ];
+
+                // Índice de la imagen actual
+                let currentImageIndex = 0;
+
+                // Función para cambiar la imagen y el nombre de la cerveza
+                function changeBeer() {
+                    // Obtener la siguiente imagen de la lista
+                    currentImageIndex = (currentImageIndex + 1) % beerData.length;
+                    
+                    // Obtener la información de la cerveza correspondiente a la imagen actual
+                    let currentBeer = new Beer(beerData[currentImageIndex].name, beerData[currentImageIndex].brand, beerData[currentImageIndex].imageUrl);
+
+                    // Actualizar la imagen y el nombre de la cerveza en la página
+                    document.getElementById("beerImage").src = currentBeer.imageUrl;
+                    document.getElementById("beerName").innerText = currentBeer.show();
+                }
+
+                // Creación de una instancia de la clase Beer para la primera imagen
+                let beer = new Beer(beerData[currentImageIndex].name, beerData[currentImageIndex].brand, beerData[currentImageIndex].imageUrl);
+
+                // Imprimir el nombre de la cerveza en la consola
+                console.log(beer.name);
+
+                // Imprimir información detallada de la cerveza usando el método show
+                console.log(beer.show());
+
+                // Agregar un evento de clic a la imagen para cambiar la cerveza
+                document.getElementById("beerImage").addEventListener("click", changeBeer);
+
+            </script>
+        </div>
+    </div>
+</body>
+</html>
