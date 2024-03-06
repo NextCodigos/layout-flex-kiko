@@ -42,3 +42,16 @@ section {
     background-color: khaki;
     padding: 20px;
 }
+
+footer{
+    padding: 20px;
+    text-align: center;
+    background-color: palevioletred;
+}
+
+/* Para modo movil responsive nav */
+@media screen and (max-width: 700px){
+    nav, .row{
+        flex-direction: column;
+    }
+}
