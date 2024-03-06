@@ -1,57 +1,73 @@
-*{
+/* Normalize estilos para todos los elementos */
+* {
     box-sizing: border-box;
 }
 
+/* Estilo global para el cuerpo */
 body {
     font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
+    margen: 0;
     padding: 0;
 }
 
-header{
+/* Encabezado */
+header {
     padding: 50px;
+    color: #333;
     background-color: aquamarine;
     text-align: center;
 }
 
-nav{
+/* Barra de navegación */
+nav {
     display: flex;
     flex-direction: row;
     background-color: #333;
 }
 
-nav a{
+/* Enlaces de navegación */
+nav a {
     color: white;
     padding: 14px 20px;
     text-decoration: none;
 }
 
-.row{
+/* Contenedor principal */
+.row {
     display: flex;
-    /* Sino cabe abajo */
+    /* Permite que los elementos se ajusten en pantallas pequeñas */
     flex-wrap: wrap;
 }
 
+/* Sección lateral */
 aside {
-    flex: 30px;
+    flex: 30%;
+    /* Ocupa el 30% del espacio disponible */
     background-color: beige;
     padding: 20px;
 }
+
+/* Sección principal */
 section {
     flex: 70%;
+    /* Ocupa el 70% del espacio disponible */
     background-color: khaki;
     padding: 20px;
 }
 
-footer{
+/* Pie de página */
+footer {
     padding: 20px;
     text-align: center;
     background-color: palevioletred;
 }
 
-/* Para modo movil responsive nav */
-@media screen and (max-width: 700px){
-    nav, .row{
+/* Estilos responsive para móviles */
+@media screen and (max-width: 700px) {
+
+    /* Muestra la navegación y el contenido principal en una columna en pantallas pequeñas */
+    nav,
+    .row {
         flex-direction: column;
     }
 }
