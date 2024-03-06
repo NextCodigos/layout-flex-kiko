@@ -7,6 +7,49 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+    <!-- Elemento para mostrar la información de las cervezas -->
+    <p id="beerInfo"></p>
+
+    <script>
+        // Definición de la clase Beer
+        class Beer {
+            // Constructor de la clase Beer
+            constructor(name, brand) {
+                this.name = name;
+                this.brand = brand;
+            }
+
+            // Método show para mostrar información de la cerveza
+            show(){
+                return this.name + " " + this.brand;
+            }
+        }
+
+
+        // Creación de una instancia de la clase Beer
+        let beer = new Beer("Tremens", "Delirium");
+
+        // Obtener el elemento para mostrar la información de las cervezas
+        let beerInfoParagraph = document.getElementById("beerInfo");
+
+        // Actualizar el contenido del párrafo con la información de la cerveza usando el método show
+        beerInfoParagraph.textContent = beer.show();
+    </script>
+    <!-- <script src="tip1.js"></script> -->
+</body>
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
     <script>
         // Definición de la clase Beer
         class Beer {
@@ -35,4 +78,4 @@
     </script>
     <!-- <script src="tip1.js"></script> -->
 </body>
-</html>
+</html> -->
