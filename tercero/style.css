@@ -49,8 +49,23 @@ nav a {
 /* Contenedor principal */
 .row {
   display: flex;
+  /* se adapta al contenido */
+  /* display: inline-flex; */
+
+  /* Para dar ancho del contenedor row, lo quito para display-flex se adapte al tamaño del contenido */
+  min-height: 800px;
+
+  /* Para cambiar el orden de las cajas de arriba a abajo,si descomento me cambia unas debajo de otras en contenedor row su elementos  */
+  /* flex-direction: column;
+  flex-direction: column-reverse; */
+  /* flex-direction: row-reverse; */
+  /* flex-direction: column; */
+  
   /* Permite que los elementos se ajusten en pantallas pequeñas */
   flex-wrap: wrap;
+  /* Separo elementos dentro de contenedor entre elllos, si pongo se ponen unas dejajo de otras */
+  /* gap: 20px; */
+  background-color: aqua;
 }
 
 /* Sección lateral */
