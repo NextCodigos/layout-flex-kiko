@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <input type="text" id="output1" value="Initial Text 1" />
+    <br>
+    <input type="text" id="output2" value="Initial Text 2" />
+    <br>
+    <input type="text" id="output3" value="Initial Text 3" />
+    <br>
+    <input type="text" id="output4" value="Initial Text 4" />
+    <br>
+    <input type="text" id="output5" value="Initial Text 5" />
+    <br>
+    <button id="updateButton">Update Values</button>
+    <script>
+        // Function to load saved values from localStorage
+        function loadSavedValues() {
+            for (let i = 1; i <= 5; i++) {
+                let savedValue = localStorage.getItem("output" + i);
+                if (savedValue !== null) {
+                    document.getElementById("output" + i).value = savedValue;
+                }
+            }
+        }
+
+        // Function to save values to localStorage
+        function saveValues() {
+            for (let i = 1; i <= 5; i++) {
+                let inputValue = document.getElementById("output" + i).value;
+                localStorage.setItem("output" + i, inputValue);
+            }
+        }
+
+        // Load saved values when the page loads
+        window.onload = loadSavedValues;
+
+        // Add event listener to the button
+        document.getElementById("updateButton").addEventListener("click", function() {
+            saveValues();
+        });
+
+        // Function to update values
+        function updateValues() {
+            for (let i = 1; i <= 5; i++) {
+                let inputValue = document.getElementById("output" + i).value;
+                document.getElementById("output" + i).value = inputValue;
+            }
+        }
+    </script>
+</body>
+</html>
