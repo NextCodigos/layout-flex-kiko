@@ -1,0 +1,116 @@
+/* Normalize estilos para todos los elementos */
+* {
+    box-sizing: border-box;
+}
+
+/* Estilo global para el cuerpo */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Encabezado */
+header {
+    padding: 50px;
+    color: #333;
+    background-color: aquamarine;
+    text-align: center;
+}
+
+/* Barra de navegación */
+nav {
+    display: flex;
+    flex-direction: row;
+    background-color: #333;
+}
+
+/* Enlaces de navegación */
+nav a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+/* Contenedor principal */
+.container {
+    background-color: grey;
+    /* Permite que los elementos se ajusten en pantallas pequeñas por defecto nowrap*/
+    flex-wrap: wrap;
+    /* Me agranda section dentro de contenedor */
+    min-height: 300px;
+
+    /* display: inline-flex;
+    display: inline-block; */
+    
+    display: flex;
+
+    /* Por defecto */
+    /* Me pone section a la izquierda */
+    /* flex-direction:row-reverse; */
+    flex-direction: row;
+    gap: 20px;
+    /* padding: 20px; */
+}
+
+.item{
+    /* Por defecto display block */
+    /* Para centrar los item dentro de sus cajas */
+    display: flex;
+    /* display: inline-flex; */
+    /* display: inline-block; */
+
+    background-color: rebeccapurple;
+    /* ancho dentro de section */
+    width: 100%;
+    /* alto dentro de section */
+    height: 150px;
+    /* margin: 15px; */
+    /* ancho dentro de section */
+    /* width: auto; */
+    /* alto dentro de section */
+    /* height: auto; */
+    /* Me une los tres item e auto */
+    /* margin: auto; */
+    color: white;
+    font-size: 5rem;
+
+    /* Centrar contenido */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Sección lateral */
+aside {
+    flex: 30%;
+    /* Ocupa el 30% del espacio disponible */
+    background-color: beige;
+    padding: 20px;
+    /* Me pone section a la izquierda */
+    /* margin: 15px; */
+}
+
+/* Sección principal */
+section {
+    flex: 70%;
+    /* Ocupa el 70% del espacio disponible */
+    background-color: khaki;
+    padding: 20px;
+}
+
+/* Pie de página */
+footer {
+    padding: 20px;
+    text-align: center;
+    background-color: palevioletred;
+}
+
+/* Estilos responsive para móviles */
+@media screen and (max-width: 700px) {
+
+    /* Muestra la navegación y el contenido principal en una columna en pantallas pequeñas */
+    nav,
+    .row {
+        flex-direction: column;
+    }
+}
